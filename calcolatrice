@@ -1,0 +1,45 @@
+print ('''calcolatrice''')
+print ('''seleziona una delle seguenti operazioni digitando il numero dell'operazione''')
+print ('''1. SOMMA DI DUE NUMERI''')
+print ('''2. SOTTRAZIONE DI DUE NUMERI''')
+print ('''3. MOLTIPLICAZIONE DI DUE NUMERI''')
+print ('''4. DIVISIONE DI DUE NUMERI''')
+print ('''-------------------------------------------------------------------------------''')
+
+operazione= int(input("operazione "))
+
+print ('''-------------------------------------------------------------------------------''')
+
+if  operazione == 1:
+    print('''inserisci i due numeri''')
+    n1 = int(input("primo numero "))
+    n2 = int(input("secondo numero "))
+    somma = n1 + n2
+    print ('''-------------------------------------------------------------------------------''')
+    print ("risultato= " + str(somma))
+
+elif  operazione == 2:
+    print('''inserisci i due numeri''')
+    n1 = int(input("primo numero "))
+    n2 = int(input("secondo numero "))
+    somma = n1 - n2
+    print ('''-------------------------------------------------------------------------------''')
+    print ("risultato= " + str(somma))
+
+elif  operazione == 3:
+    print('''inserisci i due numeri''')
+    n1 = int(input("primo numero "))
+    n2 = int(input("secondo numero "))
+    somma = n1 * n2
+    print ('''-------------------------------------------------------------------------------''')
+    print ("risultato= " + str(somma))
+
+elif operazione == 4:
+    print('''inserisci i due numeri''')
+    n1 = int(input("primo numero "))
+    n2 = int(input("secondo numero "))
+    somma = n1 / n2
+    print ('''-------------------------------------------------------------------------------''')
+    print ("risultato= " + str(somma))
+
+
