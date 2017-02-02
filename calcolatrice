@@ -16,7 +16,7 @@ if  operazione == 1:
     n1 = int(input("primo numero "))
     n2 = int(input("secondo numero "))
     print ('''-------------------------------------------------------------------------------''')
-    print ("risultato= ",n1 + n2)
+    print ("risultato =",n1 + n2)
 
 elif  operazione == 2:
     print('''SOTTRAZIONE DI DUE NUMERI''')
@@ -24,7 +24,7 @@ elif  operazione == 2:
     n1 = int(input("primo numero "))
     n2 = int(input("secondo numero "))
     print ('''-------------------------------------------------------------------------------''')
-    print ("risultato= ",n1 - n2)
+    print ("risultato =",n1 - n2)
 
 elif  operazione == 3:
     print ('''3. MOLTIPLICAZIONE DI DUE NUMERI''')
@@ -32,7 +32,7 @@ elif  operazione == 3:
     n1 = int(input("primo numero "))
     n2 = int(input("secondo numero "))
     print ('''-------------------------------------------------------------------------------''')
-    print ("risultato= ", n1 * n2)
+    print ("risultato =", n1 * n2)
 
 elif operazione == 4:
     print ('''4. DIVISIONE DI DUE NUMERI''')
@@ -40,6 +40,6 @@ elif operazione == 4:
     n1 = int(input("primo numero "))
     n2 = int(input("secondo numero "))
     print ('''-------------------------------------------------------------------------------''')
-    print ("risultato= ", n1 / n2)
+    print ("risultato =", n1 / n2)
 
 
