@@ -4,6 +4,7 @@ print ('''1. SOMMA DI DUE NUMERI''')
 print ('''2. SOTTRAZIONE DI DUE NUMERI''')
 print ('''3. MOLTIPLICAZIONE DI DUE NUMERI''')
 print ('''4. DIVISIONE DI DUE NUMERI''')
+print ('''5. SOMMA DI PIU' NUMERI''')
 print ('''-------------------------------------------------------------------------------''')
 
 operazione= int(input("operazione "))
@@ -18,7 +19,7 @@ if  operazione == 1:
     print ('''-------------------------------------------------------------------------------''')
     print ("risultato =",n1 + n2)
 
-elif  operazione == 2:
+elif operazione == 2:
     print('''SOTTRAZIONE DI DUE NUMERI''')
     print('''inserisci i due numeri''')
     n1 = int(input("primo numero "))
@@ -26,7 +27,7 @@ elif  operazione == 2:
     print ('''-------------------------------------------------------------------------------''')
     print ("risultato =",n1 - n2)
 
-elif  operazione == 3:
+elif operazione == 3:
     print ('''3. MOLTIPLICAZIONE DI DUE NUMERI''')
     print('''inserisci i due numeri''')
     n1 = int(input("primo numero "))
@@ -42,4 +43,13 @@ elif operazione == 4:
     print ('''-------------------------------------------------------------------------------''')
     print ("risultato =", n1 / n2)
 
+elif operazione == 5:
+    print('''5. SOMMA DI PIU' NUMERI''')
+    print('''inserisci numeri''')
+    somma = 0
+    num = int(input(''''''))
+    while num != 0:
+        somma +=num
+        num = int(input(''''''))
 
+    print("la somma e' =",somma)
