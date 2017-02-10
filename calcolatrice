@@ -1,55 +1,135 @@
-print ('''calcolatrice''')
-print ('''seleziona una delle seguenti operazioni digitando il numero dell'operazione''')
-print ('''1. SOMMA DI DUE NUMERI''')
-print ('''2. SOTTRAZIONE DI DUE NUMERI''')
-print ('''3. MOLTIPLICAZIONE DI DUE NUMERI''')
-print ('''4. DIVISIONE DI DUE NUMERI''')
-print ('''5. SOMMA DI PIU' NUMERI''')
-print ('''-------------------------------------------------------------------------------''')
+#include <iostream>
+#include <windows.h>
+#include <stdlib.h> 
+#include <conio.h>
+#include <math.h>
 
-operazione= int(input("operazione "))
+using namespace std;
 
-print ('''-------------------------------------------------------------------------------''')
+void selector(unsigned short color){ 
+HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE); 
+SetConsoleTextAttribute(hCon,color); 
+} 
 
-if  operazione == 1:
-    print('''SOMMA DI DUE NUMERI''')
-    print('''inserisci i due numeri''')
-    n1 = int(input("primo numero "))
-    n2 = int(input("secondo numero "))
-    print ('''-------------------------------------------------------------------------------''')
-    print ("risultato =",n1 + n2)
+int main(int argc, char** argv) {
+	
+	float somma, moltiplicazione, divisione, sottrazione, radice_quadrata;
+	float n,m,d;
+	string operazione, risposta;
+	
+	cout<<"-----------------------------------------"<<endl;
+	selector(11);
+	cout<<"Calcolatrice v1.2"<<endl;
+	selector(7);
+	cout<<"-----------------------------------------"<<endl;
+	cout<<"Si possono fare 5 operazioni:"<<endl;
+	cout<<""<<endl;
+	selector(12);
+	cout<<"Addizione (somma)"<<endl;
+	selector(13);
+	cout<<"Sottrazione (sottrazione)"<<endl;
+	selector(14);
+	cout<<"Moltiplicazione (moltiplicazione)"<<endl;
+	selector(15);
+	cout<<"Divisione (divisione)"<<endl;
+	selector(9);
+	cout<<"Radice quadrata (radice)"<<endl;
+	selector(7);
+	cout<<""<<endl;
+	cout<<"-----------------------------------------"<<endl;
 
-elif operazione == 2:
-    print('''SOTTRAZIONE DI DUE NUMERI''')
-    print('''inserisci i due numeri''')
-    n1 = int(input("primo numero "))
-    n2 = int(input("secondo numero "))
-    print ('''-------------------------------------------------------------------------------''')
-    print ("risultato =",n1 - n2)
 
-elif operazione == 3:
-    print ('''3. MOLTIPLICAZIONE DI DUE NUMERI''')
-    print('''inserisci i due numeri''')
-    n1 = int(input("primo numero "))
-    n2 = int(input("secondo numero "))
-    print ('''-------------------------------------------------------------------------------''')
-    print ("risultato =", n1 * n2)
-
-elif operazione == 4:
-    print ('''4. DIVISIONE DI DUE NUMERI''')
-    print('''inserisci i due numeri''')
-    n1 = int(input("primo numero "))
-    n2 = int(input("secondo numero "))
-    print ('''-------------------------------------------------------------------------------''')
-    print ("risultato =", n1 / n2)
-
-elif operazione == 5:
-    print('''5. SOMMA DI PIU' NUMERI''')
-    print('''inserisci numeri''')
-    somma = 0
-    num = int(input(''''''))
-    while num != 0:
-        somma +=num
-        num = int(input(''''''))
-
-    print("la somma e' =",somma)
+	do{
+	cout<<"che operazione vuoi fare?"<<endl;
+	cin>>operazione;
+	if(operazione=="somma"){
+		cout<<"inserisci i numeri e poi inserisci 0 per fare somma"<<endl;
+		somma=0;
+		while (n!=0){
+			cin>>n;
+			somma=somma+n;
+		}
+		cout<<"la somma e' "<<somma<<endl;
+	}
+	else{
+		if(operazione=="moltiplicazione"){
+			cout<<"inserisci i numeri e poi digita 1 per fare la moltiplicazione"<<endl;
+			moltiplicazione=1;
+			while (m!=1){
+				cin>>m;
+				moltiplicazione=moltiplicazione*m;
+			}
+			cout<<"il risultato e' "<<moltiplicazione<<endl;
+		}
+		else{
+			if(operazione=="divisione"){
+				cout<<"inserisci i numeri"<<endl;
+				cin>>d;
+				cin>>m;
+				if (m==0){
+					cout<<"non si puo' dividere per 0!"<<endl;
+				}
+				else{
+				divisione=d/m;
+				cout<<"il riusltato e' "<<divisione<<endl;
+				}
+				cout<<"vuoi continuare a dividere?"<<endl;
+				cin>>risposta;
+				while (risposta == "si"){
+					cout<<"inserisci il numero per il quale vuoi dividere il risultato"<<endl;
+					cin>>m;
+					if (m==0){
+						cout<<"non si puo' dividere per 0!"<<endl;
+						}
+					else{
+						divisione=divisione/m;
+						cout<<"il riusltato e' "<<divisione<<endl;
+						cout<<"vuoi continuare a dividere?"<<endl;
+						cin>>risposta;
+						}
+					}
+				}
+				else{
+					if(operazione == "radice"){
+						cout<<"di quale numero vuoi calcolare la radice?"<<endl;
+						cin>>n;
+						if (n<0){
+							cout<<"non esiste la radice di un numero negativo!";
+						}
+						else{
+							radice_quadrata = sqrt(n);
+							cout<<"la radice quadrata di "<<n<<" e' "<<radice_quadrata<<endl;
+						}
+					}
+					else{
+						if(operazione == "sottrazione"){
+							cout<<"inserisci i numeri"<<endl;
+							cin>>d;
+							cin>>m;
+							sottrazione = d-m ;
+							cout<<"il risultato e' "<<sottrazione<<endl;
+							cout<<"vuoi continuare a sottrare?"<<endl;
+							cin>>risposta;
+							while(risposta == "si"){
+								cout<<"inserisci il numero che vuoi sottrare al risultato"<<endl;
+								cin>>m;
+								sottrazione = sottrazione-m;
+								cout<<"il riusltato e' "<<sottrazione<<endl;
+								cout<<"vuoi continuare a sottrare?"<<endl;
+								cin>>risposta;
+								
+							}
+						}
+					}
+				}
+	
+			}
+		}
+	cout<<"-----------------------------------------"<<endl;
+	cout<<"vuoi contunuare a fare calcoli?"<<endl;
+	cin>>risposta;
+	cout<<"-----------------------------------------"<<endl;
+	}while(risposta == "si");
+	system ("pause");	
+	return 0;
+}
